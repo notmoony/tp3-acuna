@@ -6,12 +6,12 @@ using UnityEngine.Events;
 public class DisparoEnemigo : MonoBehaviour
 {
     public float velocidadDisparoEnemigo;
+
     void Start()
     {
-        
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(Vector2.down * velocidadDisparoEnemigo * Time.deltaTime);
     }

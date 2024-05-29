@@ -5,12 +5,14 @@ using UnityEngine;
 public class Disparo : MonoBehaviour
 {
     public float velocidadDisparo;
+    private ContadorEnemigos contadorenemigos;
 
     void Start()
     {
+        contadorenemigos = GameObject.FindObjectOfType<ContadorEnemigos>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(Vector2.up * velocidadDisparo * Time.deltaTime);
     }
@@ -21,6 +23,8 @@ public class Disparo : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            contadorenemigos.Morido();
+                
         }
 
         if(collision.gameObject.tag == "Paredes")

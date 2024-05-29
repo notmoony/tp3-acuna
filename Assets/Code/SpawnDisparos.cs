@@ -14,7 +14,7 @@ public class SpawnDisparos : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Timer -= Time.deltaTime;
         if(Timer <=0)

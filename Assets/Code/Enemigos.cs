@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemigos : MonoBehaviour
 {
     public float velocidad;
-
-    void Update()
+    
+    void FixedUpdate()
     {
         transform.Translate(Vector2.right * velocidad * Time.deltaTime);
     }
@@ -19,4 +19,5 @@ public class Enemigos : MonoBehaviour
             velocidad *= -1;
         }
     }
+
 }
